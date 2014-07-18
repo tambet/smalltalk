@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="center-form panel">
+      <form method="post" ng-submit="signup()" name="signupForm">
+        <div class="panel-body">
+          <h2 class="text-center">Sign up</h2>
+
+          <div class="form-group">
+            <input class="form-control input-lg" type="email" id="email" name="email" ng-model="email" placeholder="Email" required autofocus>
+            <div class="error" ng-show="signupForm.email.$dirty && signupForm.email.$invalid">
+              <span ng-show="signupForm.email.$error.required">Tell us your email.</span>
+              <span ng-show="signupForm.email.$error.email">This is not a valid email.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input class="form-control input-lg" type="password" name="password" ng-model="password" placeholder="Password" required>
+            <div class="error" ng-show="signupForm.password.$dirty && signupForm.password.$invalid">
+              <span ng-show="signupForm.password.$error.required">Password is required.</span>
+            </div>
+          </div>
+
+          <button type="submit" ng-disabled="signupForm.$invalid" class="btn btn-lg btn-block btn-primary">Create Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

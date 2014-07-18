@@ -9,6 +9,10 @@ var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute'])
         controller: 'LoginCtrl',
         template: JST['templates/login']
       })
+      .when('/signup', {
+        controller: 'SignupCtrl',
+        template: JST['templates/signup']
+      })
       .when('/logout', {
         resolve: {
           data: ['$location', 'Auth', function($location, Auth){

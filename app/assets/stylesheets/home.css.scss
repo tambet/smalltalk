@@ -25,3 +25,7 @@ body {
     border-radius: 0;
   }
 }
+
+:focus ~ .error {
+  display:none;
+}
