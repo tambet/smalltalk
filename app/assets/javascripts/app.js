@@ -1,4 +1,4 @@
-var app = angular.module('smalltalkApp', []);
+var app = angular.module('smalltalkApp', ['ngResource']);
 
 app.controller('MainCtrl', function($scope, userConfig) {
   $scope.currentUser = userConfig;
