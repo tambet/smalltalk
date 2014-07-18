@@ -16,10 +16,12 @@ app.factory('Auth', ['$http', '$location', '$rootScope', 'flash',
       },
       signup: function(user) {
         return $http.post('/api/v1/signup', user)
-          .success(function() {
+          .success(function(data) {
+            $rootScope.currentUser = data;
             $location.path('/');
           })
           .error(function(resp) {
+            flash.error = resp.pop();
           });
       },
       logout: function() {
