@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
+      get 'me'        => 'users#show'
       post 'signup'   => 'users#create'
       post 'login'    => 'sessions#create'
       delete 'logout' => 'sessions#destroy'
