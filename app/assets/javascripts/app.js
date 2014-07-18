@@ -7,7 +7,7 @@ var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute'])
       })
       .when('/login', {
         controller: 'LoginCtrl',
-        templateUrl: 'views/home.html',
+        template: JST['templates/login']
       });
 }]);
 
