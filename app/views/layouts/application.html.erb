@@ -10,38 +10,23 @@
   <body ng-controller="MainCtrl">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-          <div ng-cloak>
-
-            <ul class="nav navbar-nav">
-              <li data-match-route="/$"><a href="/">Home</a></li>
-              <li ng-if="currentUser" data-match-route="/add"><a href="/add">Add</a></li>
-            </ul>
-            <ul class="nav navbar-nav pull-right" ng-if="!currentUser">
-              <li data-match-route="/login"><a href="/login">Login</a></li>
-              <li data-match-route="/signup"><a href="/signup">Sign up</a></li>
-            </ul>
-            <ul class="nav navbar-nav pull-right" ng-if="currentUser">
-              <li class="username" ng-bind="currentUser.email"></li>
-              <li data-match-route="/logout"><a href="/logout">Logout</a></li>
-            </ul>
-
-          </div>
-      </div>
-    </div>
-
-
-    <div class="container">
-      <div class="starter-template">
-        <div ng-if="initialLoad">
-          <p>Configuration is loading...</p>
-        </div>
         <div ng-cloak>
-          <div ng-view></div>
-          <p>Hello {{currentUser}}!</p>
+          <ul class="nav navbar-nav">
+            <li data-match-route="/$"><a href="/">Home</a></li>
+            <li ng-if="currentUser" data-match-route="/add"><a href="/add">Add</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right" ng-if="!currentUser">
+            <li data-match-route="/login"><a href="/login">Login</a></li>
+            <li data-match-route="/signup"><a href="/signup">Sign up</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right" ng-if="currentUser">
+            <li class="username" ng-bind="currentUser.email"></li>
+            <li data-match-route="/logout"><a href="/logout">Logout</a></li>
+          </ul>
         </div>
       </div>
     </div>
-
+    <div ng-view></div>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>

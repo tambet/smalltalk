@@ -7,7 +7,7 @@ module Api
         user = User.first #.authenticate(params[:email], params[:password])
         if user
           session[:user_id] = user.id
-          render status: 200, json: 'OK'
+          render json: user
         else
           render status: 401, json: 'Unauthorized'
         end
