@@ -15,5 +15,5 @@ Rails.application.routes.draw do
       resources :posts
     end
   end
-
+  get '*path', to: 'home#index'
 end
