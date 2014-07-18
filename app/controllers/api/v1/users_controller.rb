@@ -7,6 +7,15 @@ module Api
         respond_with User.first
       end
 
+      def create
+        user = User.new(user_params)
+        if user.save
+          respond_with user
+        else
+          render status: 401, json: {}
+        end
+      end
+
     end
   end
 end

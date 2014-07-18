@@ -1,4 +1,4 @@
-var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute'])
+var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute', 'angular-flash.service', 'angular-flash.flash-alert-directive'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider

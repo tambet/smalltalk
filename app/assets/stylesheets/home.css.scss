@@ -26,6 +26,12 @@ body {
   }
 }
 
+.flash-messages {
+  height: 28px;
+  text-align: center;
+}
+
 :focus ~ .error {
   display:none;
 }
+

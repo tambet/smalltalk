@@ -1,13 +1,17 @@
-app.factory('Auth', ['$http', '$location', '$rootScope',
-  function($http, $location, $rootScope) {
+app.factory('Auth', ['$http', '$location', '$rootScope', 'flash',
+  function($http, $location, $rootScope, flash) {
     return {
       login: function(user) {
-        return $http.post('/api/v1/login', user)
+        var encoded = window.btoa(user.email + ':' + user.password);
+        $http.defaults.headers.common.Authorization = 'Basic ' + encoded;
+
+        return $http.post('/api/v1/login')
           .success(function(data) {
             $rootScope.currentUser = data;
             $location.path('/');
           })
           .error(function(resp) {
+            flash.error = 'Invalid email or password';
           });
       },
       signup: function(user) {

@@ -26,6 +26,12 @@
         </div>
       </div>
     </div>
+
+    <!-- Flash messages -->
+    <div flash-alert active-class="in" class="flash-messages alert fade">
+      <strong class="alert-message">{{flash.message}}</strong>
+    </div>
+
     <div ng-view></div>
     <%= javascript_include_tag 'application' %>
   </body>

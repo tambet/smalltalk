@@ -2,9 +2,11 @@ module Api
   module V1
     class SessionsController < ApplicationController
       skip_before_action :authenticate
+      BasicAuth = ActionController::HttpAuthentication::Basic
 
       def create
-        user = User.first #.authenticate(params[:email], params[:password])
+        username, pass = BasicAuth::user_name_and_password(request)
+        user = User.authenticate(username, pass)
         if user
           session[:user_id] = user.id
           render json: user
