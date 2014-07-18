@@ -8,6 +8,14 @@ var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute'])
       .when('/login', {
         controller: 'LoginCtrl',
         template: JST['templates/login']
+      })
+      .when('/logout', {
+        resolve: {
+          data: ['$location', 'Auth', function($location, Auth){
+            Auth.logout();
+            $location.path('/');
+          }]
+        }
       });
 }]);
 
