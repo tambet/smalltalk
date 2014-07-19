@@ -3,7 +3,8 @@ var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute', 'angular-flas
     $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
-        controller: 'MainCtr'
+        controller: 'MainCtrl',
+        template: JST['templates/main']
       })
       .when('/add', {
         controller: 'AddCtrl',
