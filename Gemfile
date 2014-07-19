@@ -16,6 +16,11 @@ group :development do
   gem 'rspec-rails', '~> 3.0.0'
 end
 
+group :test do
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
+
 # Use ActiveModel has_secure_password
 
 # Use unicorn as the app server
