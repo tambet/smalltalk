@@ -17,3 +17,6 @@
 
 # Ignore bower assests
 app/assets/components
+
+# Simplecov report
+coverage/

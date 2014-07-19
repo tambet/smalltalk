@@ -1,3 +1,11 @@
+# Run simplecov
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/config/'
+  add_filter '/.bundle/'
+end
+
 require 'auth_helper'
 
 RSpec.configure do |config|

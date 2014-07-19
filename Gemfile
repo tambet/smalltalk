@@ -17,6 +17,7 @@ group :development do
 end
 
 group :test do
+  gem 'simplecov', :require => false
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end
