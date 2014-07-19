@@ -5,6 +5,10 @@ var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute', 'angular-flas
       .when('/', {
         controller: 'MainCtr'
       })
+      .when('/add', {
+        controller: 'AddCtrl',
+        template: JST['templates/add']
+      })
       .when('/login', {
         controller: 'LoginCtrl',
         template: JST['templates/login']
