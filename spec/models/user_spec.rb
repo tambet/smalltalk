@@ -13,7 +13,7 @@ RSpec.describe User, :type => :model do
     end
 
     context 'with invalid password' do
-      it { expect(User.authenticate(user.email, 'test')).to be(false) }
+      it { expect(User.authenticate(user.email, 'test')).to be(nil) }
     end
 
     context 'with valid credentials' do

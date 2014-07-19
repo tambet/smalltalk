@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(email, password)
     user = User.where(:email => email).first
-    user && user.authenticate(password)
+    user && (user.authenticate(password) || nil)
   end
 
 end
