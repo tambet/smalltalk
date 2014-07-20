@@ -4,7 +4,7 @@ module Api
       respond_to :json
 
       def index
-        respond_with Post.all
+        respond_with Post.order(created_at: :desc)
       end
 
       def create
