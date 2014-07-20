@@ -33,4 +33,20 @@ RSpec.describe Api::V1::PostsController, :type => :controller do
     end
   end
 
+  describe "DELETE destroy" do
+    before(:each) { authWithUser(user) }
+    it "deletes provided post" do
+      post = FactoryGirl.create(:post, user: user)
+      delete :destroy, {:id => post.id}
+      expect(response).to be_success
+    end
+
+    it "should not delete another user's post" do
+      admin = FactoryGirl.create(:admin)
+      post  = FactoryGirl.create(:post, user: admin)
+      delete :destroy, {:id => post.id}
+      expect(response.status).to eq 403
+    end
+  end
+
 end
