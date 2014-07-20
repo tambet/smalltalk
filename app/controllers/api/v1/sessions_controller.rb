@@ -16,7 +16,7 @@ module Api
       end
 
       def destroy
-        session[:user_id] = nil
+        reset_session
         render status: 200, json: 'OK'
       end
 

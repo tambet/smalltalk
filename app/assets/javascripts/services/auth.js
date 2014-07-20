@@ -25,9 +25,8 @@ app.factory('Auth', ['$http', '$location', '$rootScope', 'flash',
           });
       },
       logout: function() {
-        return $http.get('/api/v1/logout').success(function() {
-          $rootScope.currentUser = null;
-        });
+        $rootScope.currentUser = null;
+        return $http.delete('/api/v1/logout');
       }
     };
 }]);

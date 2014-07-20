@@ -30,7 +30,9 @@ var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute', 'angular-flas
 
 angular.element(document).ready(function() {
   $.get('api/v1/me').always(function(data, status, jqXHR) {
-    app.constant('userConfig', status === 'success' && data);
+    app.run(function($rootScope) {
+      $rootScope.currentUser = (status === 'success' && data);
+    })
     angular.bootstrap(document, ['smalltalkApp']);
   });
 });
