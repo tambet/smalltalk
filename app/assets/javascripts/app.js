@@ -18,6 +18,14 @@ var app = angular.module('smalltalkApp', ['ngResource', 'ngRoute', 'angular-flas
         controller: 'SignupCtrl',
         template: JST['templates/signup']
       })
+      .when('/delete/:id', {
+        resolve: {
+          data: ['$location', '$route', 'Post', function($location, $route, Post){
+            Post.delete($route.current.params);
+            $location.path('/');
+          }]
+        }
+      })
       .when('/logout', {
         resolve: {
           data: ['$location', 'Auth', function($location, Auth){

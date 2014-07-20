@@ -24,3 +24,12 @@ body {
 :focus ~ .error {
   display:none;
 }
+
+.delete {
+  display: none;
+  font-size: 12px;
+}
+
+.post:hover .delete {
+  display:inline-block;
+}

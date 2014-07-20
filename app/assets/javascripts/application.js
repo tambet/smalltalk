@@ -15,6 +15,4 @@
 //= require angular-route/angular-route
 //= require angular-resource/angular-resource
 //= require angular-flash/dist/angular-flash
-//= require templates/login
-//= require templates/signup
 //= require_tree .
