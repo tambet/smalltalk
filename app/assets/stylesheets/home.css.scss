@@ -33,3 +33,17 @@ body {
 .post:hover .delete {
   display:inline-block;
 }
+
+.appName {
+  font-size: 20px;
+}
+
+.welcome {
+  max-width: 730px;
+  margin: 0 auto;
+  text-align: center;
+
+  .jumbotron {
+    background-color:#fff;
+  }
+}

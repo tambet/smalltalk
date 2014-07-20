@@ -1,21 +1,34 @@
 <div class="container">
-  <div class="jumbotron" ng-hide="currentUser">
-    <h1>Navbar example</h1>
-    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-    <p>To see the difference between static and fixed top navbars, just scroll.</p>
-    <p>
-      <a class="btn btn-lg btn-primary" href="/" role="button">View navbar docs »</a>
-    </p>
+
+  <div class="welcome" ng-hide="currentUser">
+    <div class="jumbotron">
+      <h1>Publish your ideas</h1>
+      <p class="lead">Smalltalk is a simple, powerful publishing platform that allows you to share your story with the world.</p>
+      <p><a class="btn btn-lg btn-success" href="/signup" role="button">Sign up today</a></p>
+    </div>
   </div>
 
   <div class="col-md-offset-3 col-md-6" ng-if="currentUser">
+
     <div class="post" ng-repeat="post in posts">
       <div class="page-header">
-        <h1 style="display:inline-block">{{post.heading}}</h1>
+        <h1>{{post.heading}}</h1>
       </div>
       <p class="lead">
         {{post.body}}
         <a href="/delete/{{post.id}}" class="delete">Delete post</a>
+      </p>
+    </div>
+
+    <div>
+      <div class="page-header">
+        <h1>The Mandatory Hello World</h1>
+      </div>
+      <p class="lead">
+        Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! 
+        In a comic, you know how you can tell who the arch-villain's going to be? He's the exact 
+        opposite of the hero. And most times they're friends, like you and me! I should've known 
+        way back when... You know why, David? Because of the kids. They called me Mr Glass.
       </p>
     </div>
   <div>
