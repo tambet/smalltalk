@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
     user && (user.authenticate(password) || nil)
   end
 
+  def as_json(options = nil)
+    super({ except: [:password_digest]}.merge(options || {}))
+  end
+
 end

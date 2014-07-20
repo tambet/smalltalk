@@ -7,9 +7,12 @@ SimpleCov.start do
 end
 
 require 'auth_helper'
+require 'json_helper'
 
 RSpec.configure do |config|
-  config.include AuthHelper
+  config.include AuthHelper, :type => :controller
+  config.include JsonHelper, :type => :controller
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin

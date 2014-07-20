@@ -8,6 +8,13 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
     it "returns current user" do
       get :show, format: :json
       expect(response).to be_success
+      expect(json).to have_key 'email'
+    end
+
+    it "not return password_digest" do
+      get :show, format: :json
+      expect(response).to be_success
+      expect(json).not_to have_key 'password_digest'
     end
   end
 
