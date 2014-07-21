@@ -24,6 +24,7 @@ RSpec.describe Api::V1::UsersController, :type => :controller do
         new_user = FactoryGirl.build(:user)
         post :create, {email: new_user.email, password: new_user.password}
         expect(response).to be_success
+        expect(session['user_id']).not_to eq nil
       end
     end
 
