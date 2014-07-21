@@ -14,7 +14,7 @@ which uses [rails](http://rubyonrails.org/) as a backend.
 2. `cd smalltalk && bundle install`
 3. `rake db:create && rake db:migrate`
 
-Bower package managemer is used to maintain the front-end dependencies.
+Bower package manager is used to maintain the front-end dependencies.
 
 4. `npm install -g bower`
 5. `bower install`
